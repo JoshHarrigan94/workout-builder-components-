@@ -1,5 +1,6 @@
 import WorkoutBlock01 from "./components/WorkoutBlock01";
 import SpecimenFrame from "./components/lab/SpecimenFrame";
+import MotionPrimitives from "./components/lab/MotionPrimitives";
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -275,6 +276,14 @@ function SectionView({
     subtitle="First exploration of the core workout-building unit."
   >
     <WorkoutBlock01 />
+  </SpecimenFrame>
+)}
+          {section.title === "Motion" && (
+  <SpecimenFrame
+    title="Motion Language / 01"
+    subtitle="Core interaction behaviours for press, lift, reveal and drag."
+  >
+    <MotionPrimitives />
   </SpecimenFrame>
 )}
           <div className="experiment-list">
