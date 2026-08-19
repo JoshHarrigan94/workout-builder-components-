@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
+import type { CSSProperties } from "react";
 
 import {
   motionTransition,
@@ -10,7 +11,13 @@ type WorkoutStepCardProps = {
   label?: string;
   title?: string;
   detail?: string;
-  accent?: "run" | "swim" | "strength" | "hybrid" | "ride" | "triathlon";
+  accent?:
+    | "run"
+    | "swim"
+    | "strength"
+    | "hybrid"
+    | "ride"
+    | "triathlon";
   selected?: boolean;
 };
 
@@ -40,19 +47,20 @@ export default function WorkoutStepCard01({
         selected ? "is-selected" : "",
         expanded ? "is-expanded" : "",
       ].join(" ")}
-      style={{
-        "--step-accent": accentMap[accent],
-      } as React.CSSProperties}
+      style={
+        {
+          "--step-accent": accentMap[accent],
+        } as CSSProperties
+      }
       transition={motionTransition.springSoft}
     >
       <div className="workout-step-accent" />
 
-      <button
-        className="workout-step-main"
-        onClick={() => setExpanded((value) => !value)}
-        {...pressMotion}
-      >
-        <div className="workout-step-grip" aria-hidden="true">
+      <div className="workout-step-main">
+        <div
+          className="workout-step-grip"
+          aria-hidden="true"
+        >
           <span />
           <span />
           <span />
@@ -61,33 +69,28 @@ export default function WorkoutStepCard01({
           <span />
         </div>
 
-        <div className="workout-step-copy">
-          <span className="workout-step-label">
-            {label}
-          </span>
+        <motion.button
+          type="button"
+          className="workout-step-content-button"
+          onClick={() =>
+            setExpanded((value) => !value)
+          }
+          aria-expanded={expanded}
+          {...pressMotion}
+        >
+          <div className="workout-step-copy">
+            <span className="workout-step-label">
+              {label}
+            </span>
 
-          <strong className="workout-step-title">
-            {title}
-          </strong>
+            <strong className="workout-step-title">
+              {title}
+            </strong>
 
-          <span className="workout-step-detail">
-            {detail}
-          </span>
-        </div>
-
-        <div className="workout-step-actions">
-          <button
-            className="workout-step-menu"
-            type="button"
-            aria-label="More options"
-            onClick={(event) => {
-              event.stopPropagation();
-            }}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+            <span className="workout-step-detail">
+              {detail}
+            </span>
+          </div>
 
           <motion.span
             className="workout-step-chevron"
@@ -98,8 +101,18 @@ export default function WorkoutStepCard01({
           >
             ↓
           </motion.span>
-        </div>
-      </button>
+        </motion.button>
+
+        <button
+          className="workout-step-menu"
+          type="button"
+          aria-label="More options"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
 
       <motion.div
         className="workout-step-expanded"
@@ -130,9 +143,7 @@ export default function WorkoutStepCard01({
           />
 
           <div className="workout-step-expanded-actions">
-            <button type="button">
-              Edit
-            </button>
+            <button type="button">Edit</button>
 
             <button type="button">
               Duplicate
