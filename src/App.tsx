@@ -1,4 +1,5 @@
 import WorkoutBlock01 from "./components/WorkoutBlock01";
+import SpecimenFrame from "./components/lab/SpecimenFrame";
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -268,7 +269,14 @@ function SectionView({
         </div>
 
         <div className="stage-content">
-          {section.title === "Builder" && <WorkoutBlock01 />}
+          {section.title === "Builder" && (
+  <SpecimenFrame
+    title="Workout Block / 01"
+    subtitle="First exploration of the core workout-building unit."
+  >
+    <WorkoutBlock01 />
+  </SpecimenFrame>
+)}
           <div className="experiment-list">
             {section.items.map((item, index) => (
               <motion.button
