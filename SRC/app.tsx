@@ -1,3 +1,4 @@
+import WorkoutBlock01 from "./components/WorkoutBlock01";
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -267,6 +268,7 @@ function SectionView({
         </div>
 
         <div className="stage-content">
+          {section.title === "Builder" && <WorkoutBlock01 />}
           <div className="experiment-list">
             {section.items.map((item, index) => (
               <motion.button
