@@ -1272,8 +1272,6 @@ export default function WorkoutBlock01() {
 }
 
 .workout-step-main {
-  appearance: none;
-
   width: 100%;
   min-height: 92px;
 
@@ -1292,15 +1290,6 @@ export default function WorkoutBlock01() {
   gap: var(--space-2);
 
   align-items: center;
-
-  border: 0;
-
-  background: transparent;
-  color: var(--text-primary);
-
-  text-align: left;
-
-  cursor: pointer;
 }
 
 /* Grip */
@@ -1314,6 +1303,30 @@ export default function WorkoutBlock01() {
   gap: 4px;
 
   justify-content: center;
+}
+
+.workout-step-content-button {
+  appearance: none;
+
+  min-width: 0;
+  width: 100%;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: var(--space-2);
+
+  border: 0;
+
+  background: transparent;
+  color: var(--text-primary);
+
+  text-align: left;
+
+  cursor: pointer;
 }
 
 .workout-step-grip span {
