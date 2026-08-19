@@ -1,4 +1,3 @@
-import WorkoutBlock01 from "./components/WorkoutBlock01";
 import SpecimenFrame from "./components/lab/SpecimenFrame";
 import MotionPrimitives from "./components/lab/MotionPrimitives";
 import WorkoutStepSpecimen from "./components/builder/WorkoutStepSpecimen";
