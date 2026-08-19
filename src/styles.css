@@ -1603,3 +1603,82 @@ export default function WorkoutBlock01() {
     padding-right: var(--space-3);
   }
 }
+/* ---------------------------------
+   WORKOUT STEP SPECIMEN
+---------------------------------- */
+
+.workout-step-specimen {
+  width: 100%;
+  max-width: 840px;
+
+  margin: 0 auto;
+
+  padding:
+    var(--space-4)
+    var(--space-2);
+}
+
+.workout-step-specimen-copy {
+  max-width: 540px;
+
+  margin-bottom: var(--space-5);
+}
+
+.workout-step-specimen-copy > span {
+  display: block;
+
+  margin-bottom: var(--space-1);
+
+  font-size: var(--text-micro);
+  line-height: var(--line-micro);
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  color: var(--color-run);
+}
+
+.workout-step-specimen-copy h3 {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(32px, 6cqw, 56px);
+  line-height: 0.96;
+
+  letter-spacing: -0.035em;
+}
+
+.workout-step-specimen-copy p {
+  max-width: 470px;
+
+  margin:
+    var(--space-2)
+    0
+    0;
+
+  font-size: var(--text-small);
+  line-height: var(--line-small);
+
+  color: var(--text-secondary);
+}
+
+.workout-step-stack {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-1);
+}
+
+@container specimen (max-width: 500px) {
+  .workout-step-specimen {
+    padding:
+      var(--space-3)
+      0;
+  }
+
+  .workout-step-specimen-copy {
+    margin-bottom: var(--space-3);
+  }
+}
