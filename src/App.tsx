@@ -1,6 +1,7 @@
 import WorkoutBlock01 from "./components/WorkoutBlock01";
 import SpecimenFrame from "./components/lab/SpecimenFrame";
 import MotionPrimitives from "./components/lab/MotionPrimitives";
+import WorkoutStepSpecimen from "./components/builder/WorkoutStepSpecimen";
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -272,10 +273,10 @@ function SectionView({
         <div className="stage-content">
           {section.title === "Builder" && (
   <SpecimenFrame
-    title="Workout Block / 01"
-    subtitle="First exploration of the core workout-building unit."
+    title="Workout Step / 01"
+    subtitle="Responsive atomic workout step with expansion, hierarchy and touch-first interaction."
   >
-    <WorkoutBlock01 />
+    <WorkoutStepSpecimen />
   </SpecimenFrame>
 )}
           {section.title === "Motion" && (
